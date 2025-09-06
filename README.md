@@ -32,6 +32,14 @@ make setup-dev
     ```sh
     make play
     ```
+3. Type a 5-letter word and press enter (&#x23CE;) to guess.
+4. If the letter is present in the word but not in the same position,
+the letter will be marked with yellow, if the letter is in the right position
+it will be marked with green, otherwise it will not change.
+5. Continue guessing until you get it right or reach the limit.
+
+Example:
+![screenshot with example containing 4 guesses](docs/images/screenshot_game_v0.png "The word crane was guessed correctly")
 
 
 ## Contributing
