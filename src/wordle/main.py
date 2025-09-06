@@ -3,8 +3,7 @@ from pathlib import Path
 import pygame
 
 from wordle.game import WordleGame
-from wordle.screens.wordle_v0 import WordleV0
-
+from wordle.screens.wordle_v0 import WordleScreenV0
 
 GAME_TITLE = "Wordle Game by Joeffison"
 WORD_LENGTH = 5
@@ -26,8 +25,8 @@ if __name__ == "__main__":
     game = WordleGame(get_words())
     running = True
 
-    game_screen = WordleV0()
-    game_screen.draw_screen()
+    game_screen = WordleScreenV0()
+    game_screen.draw()
 
     current_attempt = 0
     current_guess = ""
