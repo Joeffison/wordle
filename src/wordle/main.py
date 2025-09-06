@@ -5,8 +5,7 @@ import pygame
 from wordle.game import WordleGame, LetterResult
 
 
-SCREEN_WIDTH = 800
-SCREEN_HEIGHT = 600
+GAME_TITLE = "Wordle Game by Joeffison"
 
 BACKGROUND_COLOR = (0, 0, 0)
 SQUARE_COLOR = (86, 87, 88)
@@ -21,6 +20,9 @@ FONT_SIZE = 40
 
 WORD_LENGTH = 5
 MAX_ATTEMPTS = 6
+
+SCREEN_WIDTH = (SQUARE_MARGIN + SQUARE_SIZE) * WORD_LENGTH
+SCREEN_HEIGHT = (SQUARE_MARGIN + SQUARE_SIZE) * MAX_ATTEMPTS
 
 
 def get_words():
@@ -89,6 +91,7 @@ if __name__ == "__main__":
     pygame.init()
 
     screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
+    pygame.display.set_caption(GAME_TITLE)
     font = pygame.font.SysFont(None, FONT_SIZE)
 
     running = True
