@@ -38,7 +38,12 @@ if __name__ == "__main__":
 
             elif not game.game_over and event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_RETURN and len(current_guess) == WORD_LENGTH:
-                    results = game.guess_word(current_guess)
+                    try:
+                        results = game.guess_word(current_guess)
+                    except ValueError as err:
+                        print(err)
+                        continue
+
                     game_screen.draw_result(current_attempt, results)
                     game_screen.draw_guess(current_attempt, current_guess)
                     current_attempt += 1
@@ -57,4 +62,5 @@ if __name__ == "__main__":
 
         pygame.display.flip()
 
+    print(f"The word was {game._word}")
     pygame.quit()

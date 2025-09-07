@@ -14,7 +14,8 @@ class LetterResult(enum.Enum):
 class WordleGame:
 
     def __init__(self, words, max_attempts=6):
-        self._word = random.choice(words).lower()
+        self.valid_words = words
+        self._word = random.choice(self.valid_words).lower()
         self._max_attempts = max_attempts
         self._guesses = []
         self.won = False
@@ -25,9 +26,12 @@ class WordleGame:
 
     def guess_word(self, guess: str):
         if len(guess) != WORD_LENGTH:
-            raise Exception(f"Guess must have {WORD_LENGTH} letters")
+            raise ValueError(f"Guess must have {WORD_LENGTH} letters")
 
         guess = guess.lower()
+        if guess not in self.valid_words:
+            raise ValueError(f"{guess} not a valid word")
+
         self._guesses.append(guess)
         if guess == self._word:
             self.won = True
