@@ -26,3 +26,6 @@ class BaseComponent(abc.ABC):
 
     def draw_background(self, rect=None):
         self.surface.fill(self.background_color, rect)
+
+    def get_x_to_center(self, element_width):
+        return (self.width - element_width) // 2

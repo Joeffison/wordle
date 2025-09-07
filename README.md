@@ -39,7 +39,8 @@ it will be marked with green, otherwise it will not change.
 5. Continue guessing until you get it right or reach the limit.
 
 Example:
-![screenshot with example containing 4 guesses](docs/images/screenshot_game_v0.png "The word crane was guessed correctly")
+
+![recording with example containing 4 guesses](docs/images/recording_game_v1.gif "The word crane was guessed correctly")
 
 
 ## Contributing

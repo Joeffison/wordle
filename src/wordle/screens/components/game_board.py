@@ -67,7 +67,7 @@ class WordleBoard(BaseComponent):
             self.draw_background(row[index])
             self._draw_square(self.surface, row[index])
 
-    def draw_result(self, current_attempt, results):
+    def draw_result(self, current_attempt, guess, results):
         row = self.matrix_of_squares[current_attempt]
         for square, result in zip(row, results):
             if result == LetterResult.RIGHT_LETTER_RIGHT_POSITION:

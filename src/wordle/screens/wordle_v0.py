@@ -64,6 +64,6 @@ class WordleScreenV0(GameScreenBase):
         self.board.draw_guess(current_attempt, guess)
         self.surface.blit(self.board.surface, self.board_position)
 
-    def draw_result(self, current_attempt, results):
-        self.board.draw_result(current_attempt, results)
+    def draw_result(self, current_attempt, guess, results):
+        self.board.draw_result(current_attempt, guess, results)
         self.surface.blit(self.board.surface, self.board_position)
